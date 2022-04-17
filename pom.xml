@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- project是根标签， 后面是约束文件 -->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <!-- pom模型的版本，就是4.0.0 -->
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- 坐标
+    坐标作用：确定资源，是资源的唯一标识。在maven中，每个资源都是坐标，坐标值是唯一的。简称gav
+    groupId：组织名称，代码，公司，团体或者单位的标识。这个值常使用公司域名的倒写
+        如果项目规模比较大，也可以是 域名倒写 + 大项目名称
+    artifactId: 项目名称，如果groupId中有项目，此时当前的值就是子项目名。项目名称是唯一的。
+    version: 版本，项目的版本号，使用的数字，三位组成。例如 主版本号，次版本号，小版本号。例如：5.2.5
+        注意：版本号中有-SNAPSHOT，表示快照，不是稳定的版本。
+     -->
+    <groupId>com.huxili</groupId>
+    <artifactId>HDFSClient</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <maven.compiler.source>14</maven.compiler.source>    <!-- 指定编译代码的jdk版本 -->
+        <maven.compiler.target>14</maven.compiler.target>    <!-- 运行java程序使用的jdk版本 -->
+    </properties>
+
+    <!-- 寻找依赖版本信息的网址：https://mvnrepository.com -->
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.hadoop</groupId>
+            <artifactId>hadoop-client</artifactId>
+            <version>3.1.3</version>
+        </dependency>
+        <!-- 单元测试依赖项 -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>1.7.30</version>
+        </dependency>
+    </dependencies>
+
+</project>
